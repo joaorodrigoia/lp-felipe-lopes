@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Felipe Lopes · Posicionamento & Conteúdo</title>
+<meta name="description" content="Quem te vê, acredita. Quem acredita, compra. Felipe Lopes constrói a presença que vende antes da oferta." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=JetBrains+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#0A0A0A;
+  --bg-card:#111111;
+  --bg-dark:#050505;
+  --ink:#F4EFE6;
+  --ink-strong:#FFFFFF;
+  --ink-muted:#8A8378;
+  --line:rgba(244,239,230,.08);
+  --gold:#E8B547;
+  --gold-deep:#C9942F;
+  --max:1280px;
+  --r:22px;
+  --fs:16px;
+  --fd:'DM Sans',-apple-system,sans-serif;
+  --fm:'JetBrains Mono',monospace;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{background:var(--bg);color:var(--ink);font-family:var(--fm);font-size:var(--fs);line-height:1.55;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:999;opacity:.03;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");mix-blend-mode:overlay}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.container{max-width:var(--max);margin:0 auto;padding:0 40px}
+
+/* ─ NAV ─ */
+header.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 28px;display:flex;justify-content:space-between;align-items:center;pointer-events:none;background:linear-gradient(180deg,rgba(10,10,10,.9) 0%,transparent 100%)}
+header.nav>*{pointer-events:auto}
+.logo{width:50px;height:50px;border-radius:50%;background:var(--gold);display:grid;place-items:center;font-family:var(--fd);font-size:19px;font-weight:800;color:#0A0A0A;letter-spacing:-.03em;box-shadow:0 4px 18px rgba(232,181,71,.3)}
+.nav-cta{background:var(--gold);color:#0A0A0A;padding:13px 22px;border-radius:999px;font-family:var(--fd);font-size:13px;font-weight:700;letter-spacing:.06em;display:inline-flex;align-items:center;gap:9px;transition:transform .2s,box-shadow .2s}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(232,181,71,.5)}
+.wa-icon{width:16px;height:16px;flex-shrink:0}
+
+@keyframes nav-drop{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:translateY(0)}}
+header.nav{animation:nav-drop .6s cubic-bezier(.2,.8,.3,1) .1s both}
+
+/* ─ HERO ─ */
+.hero{padding:100px 0 90px}
+.hero-meta{display:flex;justify-content:space-between;font-family:var(--fm);font-style:italic;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:30px;max-width:500px;margin-left:auto;margin-right:auto}
+.hero-portrait-wrap{position:relative;max-width:460px;margin:0 auto}
+.hero-portrait{width:100%;aspect-ratio:4/5;border-radius:8px;display:block;object-fit:cover;object-position:center 15%}
+.hero-tag{position:absolute;bottom:-34px;left:0;right:0;display:flex;justify-content:space-between;align-items:center;font-family:var(--fm);font-style:italic;font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-muted)}
+.hero-tag .bar{display:inline-block;width:44px;height:3px;background:var(--gold);border-radius:2px}
+
+@keyframes hs{from{opacity:0;transform:scale(1.07)}to{opacity:1;transform:scale(1)}}
+@keyframes hu{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes hd{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:translateY(0)}}
+.hero-meta{animation:hd .8s cubic-bezier(.2,.8,.3,1) .3s both}
+.hero-portrait{animation:hs 1.3s cubic-bezier(.2,.8,.3,1) .2s both}
+.hero-tag{animation:hu .8s cubic-bezier(.2,.8,.3,1) .6s both}
+
+/* ─ HEADLINE ─ */
+.headline{padding:120px 0 90px;text-align:center}
+.headline h2{font-family:var(--fd);font-weight:800;font-size:clamp(30px,5vw,62px);line-height:.95;letter-spacing:-.04em;text-transform:uppercase;max-width:1000px;margin:0 auto 50px}
+.fill-word{display:inline-block;background:linear-gradient(to right,#fff 0%,#fff calc(var(--wp,0)*100%),rgba(244,239,230,.14) calc(var(--wp,0)*100%),rgba(244,239,230,.14) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.sub{font-family:var(--fm);font-size:15px;line-height:1.85;max-width:560px;margin:0 auto 46px;color:var(--ink-muted)}
+.sub strong{color:var(--ink);font-weight:500}
+.sub em{font-style:normal;color:var(--gold)}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:#0A0A0A;padding:20px 44px;border-radius:999px;font-family:var(--fd);font-weight:800;font-size:14px;letter-spacing:.08em;text-transform:uppercase;transition:transform .25s,box-shadow .25s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(232,181,71,.5)}
+
+/* ─ STORIES SECTION ─ */
+.stories-section{padding:64px 0 60px;overflow:hidden;background:linear-gradient(180deg,var(--bg),#0e0e0e 50%,var(--bg));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stories-label{font-family:var(--fm);font-style:italic;font-size:12px;color:var(--ink-muted);text-align:center;margin-bottom:36px;letter-spacing:.1em;text-transform:uppercase}
+.stories-label strong{color:var(--gold);font-style:normal}
+.stories-wrap{overflow:hidden;position:relative;mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+.stories-track{display:flex;gap:28px;width:max-content;padding:8px 0;animation:st-roll 40s linear infinite}
+.stories-track:hover{animation-play-state:paused}
+@keyframes st-roll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* Story bubble */
+.story-bubble{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:10px;cursor:default;transition:transform .3s}
+.story-bubble:hover{transform:translateY(-4px)}
+.story-ring{
+  width:88px;height:88px;border-radius:50%;
+  padding:3px;
+  background:conic-gradient(var(--gold) 0deg, var(--gold-deep) 120deg, var(--gold) 240deg, var(--gold-deep) 360deg);
+  box-shadow:0 0 0 0 rgba(232,181,71,0);
+  transition:box-shadow .3s;
+}
+.story-bubble:hover .story-ring{box-shadow:0 0 18px rgba(232,181,71,.45)}
+.story-inner{
+  width:100%;height:100%;border-radius:50%;
+  background:#0A0A0A;
+  border:3px solid var(--bg);
+  display:grid;place-items:center;
+  font-family:var(--fd);font-weight:800;font-size:20px;color:#fff;
+  letter-spacing:-.03em;overflow:hidden;
+}
+.story-inner img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.story-name{font-family:var(--fd);font-weight:600;font-size:13px;color:var(--ink-strong);letter-spacing:-.01em;white-space:nowrap;text-align:center;max-width:96px;overflow:hidden;text-overflow:ellipsis}
+
+/* colour variants for initials bg */
+.sv1 .story-inner{background:linear-gradient(135deg,#1c1c1c,#2a2a2a)}
+.sv2 .story-inner{background:linear-gradient(135deg,#1a1208,#2e2010)}
+.sv3 .story-inner{background:linear-gradient(135deg,#0e1a10,#162412)}
+.sv4 .story-inner{background:linear-gradient(135deg,#150a1a,#22103a)}
+
+/* ─ METHOD ─ */
+.method{padding:80px 0 110px}
+.method-eyebrow{font-family:var(--fm);font-style:italic;font-size:13px;color:var(--gold);text-align:center;margin-bottom:16px;letter-spacing:.1em;text-transform:uppercase}
+.method-headline{font-family:var(--fd);font-weight:800;font-size:clamp(32px,5vw,58px);line-height:.95;letter-spacing:-.04em;text-transform:uppercase;max-width:860px;margin:0 auto 72px;text-align:center;color:#fff}
+.method-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:var(--max);margin:0 auto}
+.method-card{
+  background:var(--bg-card);border-radius:var(--r);
+  padding:36px 30px 32px;
+  display:flex;flex-direction:column;gap:26px;
+  border:1px solid var(--line);
+  position:relative;overflow:hidden;
+  opacity:0;transform:translateY(72px) scale(.97);
+  transition:opacity .75s cubic-bezier(.22,.8,.36,1),transform .75s cubic-bezier(.22,.8,.36,1),border-color .3s,box-shadow .3s;
+  transition-delay:calc(var(--ci,0)*130ms);
+}
+.method-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold);transform:scaleY(0);transform-origin:bottom;transition:transform .65s cubic-bezier(.22,.8,.36,1);transition-delay:calc(var(--ci,0)*130ms + 280ms)}
+.method-card.visible{opacity:1;transform:translateY(0) scale(1)}
+.method-card.visible::before{transform:scaleY(1)}
+.method-card:hover{border-color:rgba(232,181,71,.22);box-shadow:0 24px 60px rgba(0,0,0,.5)}
+.step-num{font-family:var(--fm);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-muted);display:flex;align-items:center;gap:12px}
+.step-num::after{content:'';flex:1;height:1px;background:var(--line)}
+.num-b{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--gold);color:#0A0A0A;font-weight:800;font-size:11px;flex-shrink:0}
+.step-name{font-family:var(--fd);font-weight:800;font-size:clamp(34px,3.8vw,44px);letter-spacing:-.03em;color:var(--gold);line-height:.95}
+.step-desc{font-family:var(--fm);font-size:13px;line-height:1.75;color:var(--ink-muted)}
+.step-desc strong{color:var(--ink-strong);font-weight:500}
+
+/* ─ TESTIMONIALS ─ */
+.testi{padding:100px 0;background:linear-gradient(180deg,var(--bg),#0c0c0c)}
+.testi-eyebrow{font-family:var(--fm);font-style:italic;font-size:13px;text-align:center;color:var(--gold);margin-bottom:16px;letter-spacing:.1em;text-transform:uppercase}
+.testi-title{font-family:var(--fd);font-weight:800;font-size:clamp(36px,5.5vw,62px);letter-spacing:-.04em;text-align:center;text-transform:uppercase;margin-bottom:64px;line-height:.95;color:#fff}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.testi-card{background:var(--bg-card);border-radius:var(--r);padding:36px 30px;display:flex;flex-direction:column;justify-content:space-between;min-height:320px;border:1px solid var(--line);transition:transform .3s,border-color .3s}
+.testi-card:hover{transform:translateY(-5px);border-color:rgba(232,181,71,.18)}
+.qm{font-family:var(--fd);font-style:italic;font-weight:800;font-size:80px;color:var(--gold);line-height:.4;margin-bottom:14px}
+.testi-card p{font-family:var(--fm);font-size:14px;line-height:1.8;color:var(--ink);margin-bottom:28px;flex-grow:1}
+.testi-by{display:flex;justify-content:space-between;align-items:flex-end;border-top:1px solid var(--line);padding-top:16px}
+.testi-by strong{display:block;color:#fff;font-family:var(--fd);font-weight:700;font-size:15px;font-style:normal;margin-bottom:4px;letter-spacing:-.01em}
+.testi-by span{font-family:var(--fm);font-size:11px;color:var(--ink-muted);font-style:italic}
+.testi-tag{font-family:var(--fm);font-size:11px;color:var(--gold);font-style:normal;letter-spacing:.05em}
+
+/* ─ ABOUT ─ */
+.about{padding:100px 0}
+.about-img{width:100%;height:clamp(300px,55vw,600px);background-color:#0a0a0a;background-size:cover;background-repeat:no-repeat;background-position:center 18%;border-radius:var(--r);margin-bottom:64px;position:relative;overflow:hidden}
+.about-img::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(10,10,10,.5) 100%)}
+.about-title{font-family:var(--fd);font-weight:800;font-size:clamp(36px,5.5vw,62px);letter-spacing:-.04em;margin-bottom:32px;color:#fff;line-height:.95}
+.about-body{font-family:var(--fm);font-size:15px;line-height:1.85;color:var(--ink-muted);max-width:800px}
+.about-body p{margin-bottom:22px}
+.about-body strong{color:var(--ink-strong);font-weight:500}
+.about-cred{margin-top:44px;padding-top:30px;border-top:2px solid var(--gold);font-family:var(--fd);font-weight:700;font-size:18px;color:#fff;letter-spacing:-.01em}
+.cred-list{margin-top:20px;list-style:none;font-family:var(--fm);font-size:14px;color:var(--ink-muted)}
+.cred-list li{padding:8px 0;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px}
+.cred-list li:last-child{border-bottom:none}
+.cred-list li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0}
+
+/* ─ FOOTER CTA ─ */
+.foot{background:var(--bg-dark);padding:120px 0 60px;text-align:center;border-top:1px solid var(--line);position:relative;overflow:hidden}
+.foot::before{content:'';position:absolute;top:-220px;left:50%;transform:translateX(-50%);width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(232,181,71,.06),transparent 65%);pointer-events:none}
+.foot-icon{width:62px;height:62px;margin:0 auto 28px;color:var(--gold)}
+.foot-title{font-family:var(--fd);font-weight:800;font-size:clamp(36px,6vw,72px);letter-spacing:-.04em;margin-bottom:20px;color:#fff;line-height:.92;text-transform:uppercase}
+.foot-sub{font-family:var(--fm);font-size:15px;color:rgba(255,255,255,.5);max-width:480px;margin:0 auto 46px;line-height:1.85}
+.foot-sub strong{color:rgba(255,255,255,.8);font-weight:500}
+.foot .btn{padding:22px 52px;font-size:15px}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.07);padding:28px 0;margin-top:80px;font-family:var(--fm);font-size:12px;color:rgba(255,255,255,.3);display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
+.foot-bottom a:hover{color:rgba(255,255,255,.8)}
+
+/* ─ SCROLL ANIM ─ */
+.fade-up{opacity:0;transform:translateY(36px);transition:opacity .9s cubic-bezier(.22,.8,.36,1),transform .9s cubic-bezier(.22,.8,.36,1)}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+
+/* ════════════════════
+   MOBILE  ≤ 640px
+   ════════════════════ */
+@media(max-width:640px){
+  :root{--fs:15px}
+  .container{padding:0 22px}
+
+  /* nav */
+  header.nav{padding:14px 20px}
+  .logo{width:44px;height:44px;font-size:17px}
+  .nav-cta{padding:11px 16px;font-size:12px;gap:7px}
+  .nav-cta .wa-icon{width:14px;height:14px}
+
+  /* hero */
+  .hero{padding:78px 0 70px}
+  .hero-meta{font-size:11px;margin-bottom:22px}
+  .hero-tag{font-size:10px;bottom:-26px}
+  .hero-tag .bar{width:32px}
+
+  /* headline */
+  .headline{padding:90px 0 72px}
+  .headline h2{font-size:clamp(28px,9.5vw,42px);margin-bottom:32px}
+  .sub{font-size:14px;margin-bottom:36px}
+  .btn{padding:18px 32px;font-size:13px;width:100%;justify-content:center}
+
+  /* stories */
+  .stories-section{padding:48px 0 44px}
+  .stories-label{font-size:11px;margin-bottom:28px}
+  .story-ring{width:76px;height:76px}
+  .story-name{font-size:12px;max-width:80px}
+  .story-inner{font-size:17px}
+  .stories-track{gap:22px}
+
+  /* method */
+  .method{padding:60px 0 80px}
+  .method-eyebrow{font-size:12px}
+  .method-headline{font-size:clamp(30px,9vw,44px);margin-bottom:44px}
+  .method-grid{grid-template-columns:1fr;gap:14px}
+  .method-card{padding:28px 22px 24px;gap:20px}
+  .step-name{font-size:clamp(30px,10vw,40px)}
+  .step-desc{font-size:13px}
+
+  /* testi */
+  .testi{padding:70px 0}
+  .testi-title{font-size:clamp(30px,9vw,44px);margin-bottom:44px}
+  .testi-grid{grid-template-columns:1fr}
+  .testi-card{min-height:auto;padding:28px 22px}
+  .testi-card p{font-size:14px}
+  .testi-by strong{font-size:14px}
+
+  /* about */
+  .about{padding:70px 0}
+  .about-img{height:clamp(220px,70vw,360px);margin-bottom:44px}
+  .about-title{font-size:clamp(30px,9vw,44px);margin-bottom:22px}
+  .about-body{font-size:14px}
+  .about-cred{font-size:16px}
+  .cred-list{font-size:13px}
+
+  /* footer */
+  .foot{padding:80px 0 44px}
+  .foot-title{font-size:clamp(32px,10vw,54px)}
+  .foot-sub{font-size:14px;margin-bottom:36px}
+  .foot .btn{width:100%;justify-content:center;padding:20px 32px}
+  .foot-bottom{margin-top:52px;flex-direction:column;gap:8px;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <a href="#" class="logo" aria-label="Felipe Lopes">FL</a>
+  <a href="https://wa.me/message/BHYYZE32R52CI1" target="_blank" rel="noopener" class="nav-cta">
+    <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.522 5.273l-.999 3.648 3.966-.62z"/></svg>
+    FALAR NO WHATSAPP
+  </a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-meta">
+      <span>FELIPE LOPES</span>
+      <span>SINCE 2018</span>
+    </div>
+    <div class="hero-portrait-wrap">
+      <img class="hero-portrait" src="assets/photographer-1.png" alt="Felipe Lopes" />
+      <div class="hero-tag">
+        <span class="bar"></span>
+        <span>POSICIONAMENTO · MARCA · CONTEÚDO</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HEADLINE -->
+<section class="headline">
+  <div class="container">
+    <h2><span data-fill>Você não tem problema de conteúdo. Tem problema de autoridade.</span></h2>
+    <p class="sub">
+      Feed cheio não é presença — é ruído. <strong>Autoridade é quando o cliente chega sabendo que é você.</strong> Sou o Felipe Lopes. Construo o posicionamento de quem quer ser <em>a referência</em> do segmento, não mais um criador no scroll.
+    </p>
+    <a href="https://wa.me/message/BHYYZE32R52CI1" target="_blank" rel="noopener" class="btn">
+      <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.522 5.273l-.999 3.648 3.966-.62z"/></svg>
+      QUERO SER REFERÊNCIA
+    </a>
+  </div>
+</section>
+
+<!-- STORIES — experiência como Instagram Stories -->
+<section class="stories-section">
+  <p class="stories-label">— quem já <strong>confiou</strong> no trabalho do Felipe —</p>
+  <div class="stories-wrap">
+    <div class="stories-track" id="storiesTrack"></div>
+  </div>
+</section>
+
+<!-- METHOD -->
+<section class="method">
+  <div class="container">
+    <p class="method-eyebrow fade-up">— o processo —</p>
+    <h2 class="method-headline fade-up">Do invisível<br/>ao inevitável.</h2>
+    <div class="method-grid">
+
+      <div class="method-card" style="--ci:0">
+        <div class="step-num"><span class="num-b">1</span>ETAPA</div>
+        <div>
+          <div class="step-name">Diagnóstico</div>
+          <p class="step-desc">Antes de criar qualquer conteúdo, entendo onde você está e onde o mercado te coloca. <strong>Posicionamento errado é o motivo de 90% do bom conteúdo que não converte.</strong></p>
+        </div>
+      </div>
+
+      <div class="method-card" style="--ci:1">
+        <div class="step-num"><span class="num-b">2</span>ETAPA</div>
+        <div>
+          <div class="step-name">Estratégia</div>
+          <p class="step-desc">Definimos o território da sua marca: o que fala, como fala, pra quem fala. <strong>Uma diretriz clara que elimina a paralisia criativa de vez.</strong></p>
+        </div>
+      </div>
+
+      <div class="method-card" style="--ci:2">
+        <div class="step-num"><span class="num-b">3</span>ETAPA</div>
+        <div>
+          <div class="step-name">Produção</div>
+          <p class="step-desc">Conteúdo com intenção, não volume. Cada peça carrega a narrativa certa, <strong>no formato certo, para o público que compra.</strong></p>
+        </div>
+      </div>
+
+      <div class="method-card" style="--ci:3">
+        <div class="step-num"><span class="num-b">4</span>ETAPA</div>
+        <div>
+          <div class="step-name">Distribuição</div>
+          <p class="step-desc">Amplificamos onde faz sentido — orgânico, pago, parceria. <strong>Sem desperdiçar verba em plataforma que não é do seu cliente.</strong></p>
+        </div>
+      </div>
+
+      <div class="method-card" style="--ci:4">
+        <div class="step-num"><span class="num-b">5</span>ETAPA</div>
+        <div>
+          <div class="step-name">Consolidação</div>
+          <p class="step-desc">Resultado que fica. Autoridade que acumula. <strong>O cliente que chega sem você ter pedido é o sinal de que o método funcionou.</strong></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi">
+  <div class="container">
+    <p class="testi-eyebrow fade-up">— quem fez o processo —</p>
+    <h2 class="testi-title fade-up">Resultado fala<br/>mais alto que<br/>promessa.</h2>
+    <div class="testi-grid">
+      <div class="testi-card fade-up">
+        <div>
+          <div class="qm">"</div>
+          <p>Antes eu postava todo dia e não saía do lugar. O Felipe me fez parar, entender o que eu comunicava de verdade — e em três meses meu DM virou pipeline. Parecia mágica, mas era método.</p>
+        </div>
+        <div class="testi-by">
+          <div><strong>Don Diego</strong><span>Empresário · SP</span></div>
+          <span class="testi-tag">@DONDIEGO</span>
+        </div>
+      </div>
+      <div class="testi-card fade-up">
+        <div>
+          <div class="qm">"</div>
+          <p>Já trabalhei com agência grande, freelancer barato e tentei fazer sozinho. Nenhum chegou perto do que o Felipe entrega porque ele não vende serviço — ele entra na marca e pensa junto.</p>
+        </div>
+        <div class="testi-by">
+          <div><strong>Marcos Strider</strong><span>Criador de conteúdo</span></div>
+          <span class="testi-tag">@MARCOSSTRIDER</span>
+        </div>
+      </div>
+      <div class="testi-card fade-up">
+        <div>
+          <div class="qm">"</div>
+          <p>A Ferracini precisava de presença que traduzisse qualidade real em imagem digital. Felipe entendeu a marca no primeiro briefing. A campanha fechou em 48h de veiculação.</p>
+        </div>
+        <div class="testi-by">
+          <div><strong>Darlan Souza</strong><span>Gestor de Marketing</span></div>
+          <span class="testi-tag">FERRACINI</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about">
+  <div class="container">
+    <div class="about-img" style="background-image:url('assets/photographer-3.png');background-position:center 30%"></div>
+    <h2 class="about-title fade-up">Sou o Felipe Lopes.</h2>
+    <div class="about-body fade-up">
+      <p>Comecei com câmera emprestada e a ideia ingênua de que fazer bom conteúdo era suficiente. Aprendi na prática que não é — aprendi que <strong>imagem sem posicionamento é ruído com boa qualidade.</strong></p>
+      <p>Hoje trabalho com empreendedores, marcas em escalada e criadores que cansaram de produzir e não converter. Não tenho fórmula de viralização. Tenho um processo testado em mais de 80 projetos que transforma presença em autoridade — e autoridade em venda.</p>
+      <p><strong>Não sou guru. Sou o profissional que entra na sua marca, entende o que ela tem de único e traduz isso numa linguagem que o mercado respeita.</strong></p>
+      <div class="about-cred">
+        7 anos. 80+ projetos. Um método que funciona.
+        <ul class="cred-list">
+          <li>Estratégia de posicionamento e marca pessoal</li>
+          <li>Direção de conteúdo, campanha e audiovisual</li>
+          <li>Atuação com empreendedores, criadores e marcas nacionais</li>
+          <li>Projetos em todo o Brasil · base em São Paulo</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER CTA -->
+<section class="foot" id="contato">
+  <div class="container">
+    <svg class="foot-icon" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.522 5.273l-.999 3.648 3.966-.62z"/>
+    </svg>
+    <h2 class="foot-title">Uma conversa.<br/>Uma virada.</h2>
+    <p class="foot-sub">
+      Conta pra mim onde você está e onde quer chegar. <strong>Sem formulário, sem robô, sem funil cheio de passos.</strong> Só uma conversa direta sobre a sua marca.
+    </p>
+    <a href="https://wa.me/message/BHYYZE32R52CI1" target="_blank" rel="noopener" class="btn">
+      <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.522 5.273l-.999 3.648 3.966-.62z"/></svg>
+      FALAR COM O FELIPE
+    </a>
+    <div class="foot-bottom">
+      <span>© 2026 Felipe Lopes · São Paulo, BR</span>
+      <span><a href="#" target="_blank">Instagram</a> · <a href="#" target="_blank">TikTok</a> · <a href="#" target="_blank">YouTube</a></span>
+    </div>
+  </div>
+</section>
+
+<script>
+/* ── Word-fill on scroll ── */
+document.querySelectorAll('[data-fill]').forEach(el => {
+  const raw = el.textContent;
+  el.textContent = '';
+  raw.split(/(\s+)/).forEach(tok => {
+    if (/^\s+$/.test(tok)) { el.appendChild(document.createTextNode(tok)); return; }
+    if (!tok.length) return;
+    const s = document.createElement('span');
+    s.className = 'fill-word';
+    s.textContent = tok;
+    el.appendChild(s);
+  });
+});
+let filling = false;
+function doFill() {
+  const vh = window.innerHeight;
+  document.querySelectorAll('[data-fill]').forEach(el => {
+    const r = el.getBoundingClientRect();
+    const s = vh*.88, e = vh*.5;
+    const p = r.top > s ? 0 : r.top < e - r.height ? 1 : Math.max(0, Math.min(1, (s - r.top)/(s-(e-r.height))));
+    const ws = el.querySelectorAll('.fill-word'), n = ws.length;
+    if (!n) return;
+    const ov = .6;
+    ws.forEach((w, i) => {
+      const a = (i/n)*(1-ov), b = a+ov+1/n;
+      w.style.setProperty('--wp', p<=a?0:p>=b?1:(p-a)/(b-a));
+    });
+  });
+  filling = false;
+}
+function onScroll(){ if(!filling){ requestAnimationFrame(doFill); filling=true; } }
+window.addEventListener('scroll', onScroll, {passive:true});
+window.addEventListener('resize', onScroll);
+doFill();
+
+/* ── IntersectionObserver ── */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
+}, {threshold:.12, rootMargin:'0px 0px -50px 0px'});
+document.querySelectorAll('.fade-up, .method-card').forEach(el => io.observe(el));
+
+/* ── Stories (Instagram-style bubbles) ── */
+const STORIES = [
+  {n:'BNI',             i:'BNI', v:1},
+  {n:'Darlan Souza',    i:'DS',  v:2},
+  {n:'Marcos Strider',  i:'MS',  v:3},
+  {n:'TikTok',          i:'TT',  v:4},
+  {n:'Andre Vitor',     i:'AV',  v:1},
+  {n:'MLS',             i:'ML',  v:2},
+  {n:'Poker Experience',i:'PE',  v:3},
+  {n:'Cupom LIPE',      i:'CL',  v:1},
+  {n:'Ferracini',       i:'FR',  v:4},
+  {n:'Davi Braga',      i:'DB',  v:2},
+  {n:'Don Diego',       i:'DD',  v:1},
+  {n:'Minimal Club',    i:'MC',  v:3},
+];
+const track = document.getElementById('storiesTrack');
+function makeStories() {
+  const f = document.createDocumentFragment();
+  STORIES.forEach(s => {
+    const b = document.createElement('div');
+    b.className = `story-bubble sv${s.v}`;
+    b.innerHTML = `
+      <div class="story-ring">
+        <div class="story-inner">${s.i}</div>
+      </div>
+      <div class="story-name">${s.n}</div>`;
+    f.appendChild(b);
+  });
+  return f;
+}
+track.appendChild(makeStories());
+track.appendChild(makeStories());
+</script>
+</body>
+</html>
